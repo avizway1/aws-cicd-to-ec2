@@ -7,9 +7,9 @@ set -euo pipefail
 echo "[start_server] Starting..."
 
 # ── Set correct ownership and permissions ─────────────────────────
-echo "[start_server] Setting ownership and permissions on /var/www/html/..."
-chown -R nginx:nginx /var/www/html/
-chmod -R 755 /var/www/html/
+echo "[start_server] Setting ownership and permissions on /usr/share/nginx/html/..."
+chown -R nginx:nginx /usr/share/nginx/html/
+chmod -R 755 /usr/share/nginx/html/
 
 # ── Start or reload Nginx ─────────────────────────────────────────
 if systemctl is-active --quiet nginx; then

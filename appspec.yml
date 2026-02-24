@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /var/www/html/
+    destination: /usr/share/nginx/html/
 
 hooks:
   BeforeInstall:
