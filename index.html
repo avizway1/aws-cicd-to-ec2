@@ -9,7 +9,7 @@
 <body>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="header-inner">
       <div class="brand">
         <span class="brand-name">Aviz Academy</span>
@@ -19,12 +19,13 @@
   </header>
 
   <!-- Main -->
-  <main class="main">
-    <div class="card">
+  <main class="main" role="main">
+    <section class="card">
       <h1 class="card-title">My To-Do List - Feb 2026</h1>
 
       <!-- Input -->
       <div class="input-row">
+        <label for="taskInput" class="sr-only">Enter a new task</label>
         <input
           type="text"
           id="taskInput"
@@ -32,38 +33,40 @@
           placeholder="What do you need to do?"
           maxlength="200"
           autocomplete="off"
+          aria-describedby="taskHelp"
         />
         <button id="addBtn" class="btn btn-add">Add Task</button>
+        <div id="taskHelp" class="sr-only">Press Enter or click Add Task to add the item to your list</div>
       </div>
 
       <!-- Filters -->
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="active">Active</button>
-        <button class="filter-btn" data-filter="completed">Completed</button>
-      </div>
+      <nav class="filters" aria-label="Task filters">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+        <button class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+      </nav>
 
       <!-- Task List -->
-      <ul id="taskList" class="task-list">
+      <ul id="taskList" class="task-list" aria-label="List of tasks">
         <!-- tasks rendered by app.js -->
       </ul>
 
       <!-- Empty State -->
-      <div id="emptyState" class="empty-state hidden">
-        <span class="empty-icon">✅</span>
+      <div id="emptyState" class="empty-state hidden" aria-live="polite">
+        <span class="empty-icon" aria-hidden="true">✅</span>
         <p>No tasks here. Add one above!</p>
       </div>
 
       <!-- Summary Bar -->
       <div class="summary-bar">
-        <span id="taskCount" class="task-count">0 tasks left</span>
-        <button id="clearCompleted" class="btn btn-ghost">Clear Completed</button>
+        <span id="taskCount" class="task-count" aria-live="polite">0 tasks left</span>
+        <button id="clearCompleted" class="btn btn-ghost" aria-label="Clear all completed tasks">Clear Completed</button>
       </div>
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <p>
       &copy; 2025 <strong>Aviz Academy</strong> &mdash; Learn by Doing, Not Just Watching
       &nbsp;|&nbsp; <span class="version">v2.0</span>
