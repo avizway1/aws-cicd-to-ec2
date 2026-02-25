@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: 2048-container
-        image: 982424467695.dkr.ecr.ap-south-1.amazonaws.com/game-2048-awar06:latest
+        image: thipparthiavinash/mycalapp-awar05:latest
         ports:
         - containerPort: 80
