@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: 2048-container
-        image: thipparthiavinash/mycalapp-awar05:latest
+        image: thipparthiavinash/mycapp-awar05:latest
         ports:
         - containerPort: 80
